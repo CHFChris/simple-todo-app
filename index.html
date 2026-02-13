@@ -1,26 +1,43 @@
 <!DOCTYPE html>
 <html lang="de">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meine Todo-App</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meine Todo-App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <div class="container">
-        <h1>Meine Todos</h1>
+  <div class="container">
+    <h1 class="h1">Meine Todos</h1>
 
-        <div class="input-section">
-            <input type="text" id="todoInput" placeholder="Neue Aufgabe eingeben...">
-            <button id="addBtn">Hinzufügen</button>
-        </div>
+    <div class="input-section">
+      <input type="text" id="todoInput" placeholder="Neue Aufgabe eingeben..." />
 
-        <ul id="todoList"></ul>
+      <select id="prioritySelect" aria-label="Priorität">
+        <option value="low">Niedrig</option>
+        <option value="medium" selected>Mittel</option>
+        <option value="high">Hoch</option>
+      </select>
+
+      <input type="date" id="dueDateInput" aria-label="Fälligkeitsdatum" />
+
+      <button id="addBtn">Hinzufügen</button>
     </div>
 
-    <script src="app.js"></script>
-</body>
+    <div class="toolbar">
+      <p id="counter" class="small">0 von 0 erledigt</p>
 
+      <select id="filterSelect" aria-label="Filter">
+        <option value="all" selected>Alle</option>
+        <option value="active">Offen</option>
+        <option value="completed">Erledigt</option>
+      </select>
+    </div>
+
+    <ul id="todoList"></ul>
+  </div>
+
+  <script src="app.js"></script>
+</body>
 </html>
